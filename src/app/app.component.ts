@@ -1,5 +1,11 @@
 import {Component} from '@angular/core';
 
+export interface Post {
+  title: string
+  text: string
+  id?: number
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +13,16 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
+  posts: Post[] = [
+    {title: 'Хочу выучить Angular компоненты', text: 'Я все еще учу компоненты', id: 1},
+    {title: 'Следующий блок', text: 'Будет про директив и еще про пайпы', id: 2}
+  ]
 
 
+  updatePosts(post: Post) {
+    console.log('AAAA', post)
+    this.posts.unshift(post)
+  }
 
 
   // now: Date = new Date()
@@ -18,7 +32,7 @@ export class AppComponent {
 //   arr = [1,1,3,5,7,8,9]
 //
 //   objs = [
-//     {title: 'Post 1', author: 'Vlad', comments:[
+//     {title: 'Post 1', author: 'Vlad',б  comments:[
 //         {name: 'Max', text: 'Lorem 1'},
 //         {name: 'Max', text: 'Lorem 2'},
 //         {name: 'Max', text: 'Lorem 3'}
@@ -31,15 +45,11 @@ export class AppComponent {
 //   ]
 
 
-
-
   // title = 'Some text'
   //
   // onInput(event: any){
   //   this.title = event.target.value
   // }
-
-
 
 
   // title = 'angular-basics';
