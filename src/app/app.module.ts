@@ -8,6 +8,8 @@ import {Post4Component} from "./post4/post4.component";
 import {FormsModule} from "@angular/forms";
 import { PostFormComponent } from './post-form/post-form.component';
 import { PostMainComponent } from './post-main/post-main.component';
+import {StyleDirectives} from "./directives/style.directives";
+import { IfnotDirective } from './directives/ifnot.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PostMainComponent } from './post-main/post-main.component';
     Post2Component,
     Post4Component,
     PostFormComponent,
-    PostMainComponent
+    PostMainComponent,
+    StyleDirectives,
+    IfnotDirective
   ],
   imports: [
     BrowserModule,
