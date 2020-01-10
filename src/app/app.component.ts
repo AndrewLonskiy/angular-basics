@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Observable} from "rxjs";
+// import {Promise} from "q";
+
 
 export interface Post {
   title: string
@@ -13,8 +16,57 @@ export interface Post {
 })
 export class AppComponent implements OnInit {
 
-  isVisible = true
 
+  date: Observable<Date> = new Observable(obs => {
+    setInterval(() => {
+      obs.next(new Date())
+    }, 1000)
+  })
+
+  p: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve("Promise resolved")
+    }, 4000)
+  })
+
+  search = ''
+  searchField = 'title'
+
+  postsNew: Post[] = [
+    {title: 'Beer', text: 'Самое лучшее пиво в мире'},
+    {title: 'Bread', text: 'The best bread in the world'},
+    {title: 'JavaScript', text: 'The best language in the world'},
+  ]
+
+  addPost() {
+    this.postsNew.push({
+      title: 'Angular 8',
+      text: 'Some text'
+    })
+  }
+
+  // e: number = Math.E
+
+  // str = 'hello world'
+
+  // date: Date = new Date()
+
+  // float: number = 0.42
+
+  // obj = {
+  //   a: 1,
+  //   b: {
+  //     c:2,
+  //     d: {
+  //       e: 3,
+  //       f: 4
+  //     }
+  //   }
+  // }
+
+
+  // isVisible = true
+  //
   posts: Post[] = [
     {title: 'Хочу выучить Angular компоненты', text: 'Я все еще учу компоненты', id: 1},
     {title: 'Следующий блок', text: 'Будет про директив и еще про пайпы', id: 2}
@@ -26,7 +78,6 @@ export class AppComponent implements OnInit {
       this.posts[0].title = 'Changed!'
     }, 5000)
   }
-
 
 
   updatePosts(post: Post) {
