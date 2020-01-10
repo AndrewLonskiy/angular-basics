@@ -1,28 +1,55 @@
 <div class="container">
+<h1>Angular Services</h1>
+
+  <div class="card">'
+    <h2>App Counter: {{appCounterService.counter}}</h2>
+
+    <button class="btn" (click)="appCounterService.increase()">+</button>
+    <button class="btn" (click)="appCounterService.decrease()">-</button>
+  </div>
+
+  <div class="card">'
+    <h2>App Counter: {{localCountingService.counter}}</h2>
+
+    <button class="btn" (click)="localCountingService.increase()">+</button>
+    <button class="btn" (click)="localCountingService.decrease()">-</button>
+  </div>
+
+
+  <hr>
+
+  <app-counter></app-counter>
+
+</div>
+
+
+
+
+<div class="container">
   <h1>Angular Pipes</h1>
 
 
-  <p>{{date | async | date: 'long'}}</p>
+  <!--<p>{{date | async | date: 'long'}}</p>-->
 
-  <p>Wait me ...{{ p | async}}</p>
+  <!--<p>Wait me ...{{ p | async}}</p>-->
 
-  <hr>
+  <!--<hr>-->
 
-  <button class="btn" (click)="searchField = 'title'">Title</button>
-  <button class="btn" (click)="searchField = 'text'">Text</button>
+  <!--<button class="btn" (click)="searchField = 'title'">Title</button>-->
+  <!--<button class="btn" (click)="searchField = 'text'">Text</button>-->
 
-  <hr>
+  <!--<hr>-->
 
-  <button class="btn" (click)="addPost()">Добавить пост</button>
+  <!--<button class="btn" (click)="addPost()">Добавить пост</button>-->
 
-  <input type="text" [(ngModel)]="search">
-  <div
-    *ngFor="let pos of postsNew | filter: search: searchField"
-    class="card"
-  >
-    <h2>{{pos.title}}</h2>
-    <p>{{pos.text}}</p>
-  </div>
+  <!--<input type="text" [(ngModel)]="search">-->
+  <!--<div-->
+    <!--*ngFor="let pos of postsNew | filter: search: searchField"-->
+    <!--class="card"-->
+  <!--&gt;-->
+    <!--<h2>{{pos.title}}</h2>-->
+    <!--<p>{{pos.text}}</p>-->
+  <!--</div>-->
 
 
   <!--<p>-->
